@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Propiedades para HSQLDB (local - pruebas) 
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+        <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="connection.url">jdbc:hsqldb:data/bdscec</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password"></property>
+         -->
+        
+        <!-- Propiedades para MySQL (remoto)  -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bdscec?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">2015</property>
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="hibernate.connection.pool_size">1</property>
+	
+		<!-- SQL dialect -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<!-- Disable the second-level cache -->
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="hibernate.show_sql">true</property>
+
+
+
+
+        <!-- Usar el pool de conecciones de C3P0
+        <property name="c3p0.min_size">3</property>
+        <property name="c3p0.max_size">5</property>
+        <property name="c3p0.timeout">1800</property>
+        -->
+
+        <!-- Archivos ORM -->
+        <mapping resource="edu/uag/iidis/scec/modelo/Usuario.hbm.xml"/>
+        <mapping resource="edu/uag/iidis/scec/modelo/Rol.hbm.xml"/>
+        <mapping resource="edu/uag/iidis/scec/modelo/Estado.hbm.xml"/>
+		<mapping resource="edu/uag/iidis/scec/modelo/Auto.hbm.xml"/>
+        <mapping resource="edu/uag/iidis/scec/modelo/Ciudad.hbm.xml"/>
+        <mapping resource="edu/uag/iidis/scec/modelo/Gente.hbm.xml"/>
+        <mapping resource="edu/uag/iidis/scec/modelo/Login.hbm.xml"/>
+    </session-factory>
+
+</hibernate-configuration>

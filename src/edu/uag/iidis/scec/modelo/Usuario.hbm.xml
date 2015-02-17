@@ -1,0 +1,45 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">  
+
+<hibernate-mapping>
+    <class name="edu.uag.iidis.scec.modelo.Usuario"
+        table="Usuarios">
+
+        <id name="id"
+            column="idUsuario"
+            type="java.lang.Long"
+            unsaved-value="null" >
+            <generator class="increment">
+            </generator>
+        </id>
+
+        <component name="nombre">
+            <property name="prefijo" column="nombrePrefijo" />            
+            <property name="nombre" column="nombreNombre" />
+            <property name="apellidoPaterno" column="nombreApellidoPaterno" />
+            <property name="apellidoMaterno" column="nombreApellidoMaterno" />
+            <property name="posfijo" column="nombrePosfijo" />
+            <property name="iniciales" column="nombreIniciales"/>
+        </component>
+
+        <component name="credencial">
+            <property name="nombreUsuario" 
+                    not-null="true"
+                    unique="true" />
+            <property name="claveAcceso" 
+                    not-null="true" />
+        </component>
+
+        <bag name="roles"
+             lazy="false"
+             table="UsuarioRol"
+             inverse="false"
+             cascade="save-update">
+
+             <key column="idUsuario" />
+
+             <many-to-many column="idRol"
+                  class="edu.uag.iidis.scec.modelo.Rol" />
+        </bag>
+    </class>
+
+</hibernate-mapping>

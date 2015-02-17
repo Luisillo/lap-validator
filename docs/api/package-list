@@ -1,0 +1,8 @@
+edu.uag.iidis.scec.control
+edu.uag.iidis.scec.excepciones
+edu.uag.iidis.scec.modelo
+edu.uag.iidis.scec.persistencia
+edu.uag.iidis.scec.persistencia.hibernate
+edu.uag.iidis.scec.pruebas
+edu.uag.iidis.scec.servicios
+edu.uag.iidis.scec.vista

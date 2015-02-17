@@ -1,0 +1,40 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">  
+
+<hibernate-mapping>
+    <class name="edu.uag.iidis.scec.modelo.Rol"
+           table="Roles"
+           dynamic-update="false"
+           dynamic-insert="false">
+
+        <id name="id"
+            column="idRol"
+            type="java.lang.Long"
+            unsaved-value="null" >
+            <generator class="increment">
+            </generator>
+        </id>
+
+        <property name="nombre"
+            type="java.lang.String"
+            not-null="true"
+            unique="true" />
+
+        <property name="descripcion"
+            type="java.lang.String" />
+
+        <bag name="usuarios"
+             lazy="false"
+             table="UsuarioRol"
+             inverse="true"
+             cascade="save-update">
+
+             <key column="idRol" />
+
+             <many-to-many column="idUsuario"
+                  class="edu.uag.iidis.scec.modelo.Usuario" />
+        </bag>
+
+
+    </class>
+
+</hibernate-mapping>

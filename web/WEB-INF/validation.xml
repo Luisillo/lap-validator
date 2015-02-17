@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+
+<!--
+    Reglas de validación para la aplicación SCEC
+-->
+
+<form-validation>
+    <global>
+        <constant>
+            <constant-name>alfabetico</constant-name>
+            <constant-value>^[a-zA-ZáéíóúñÑ ]*$</constant-value>
+        </constant>
+    </global>
+
+    <formset>
+        <form name="formaNuevoRol">
+            <field property="nombre"
+         	   depends="required,mask">
+                <msg name="mask" key="errors.mascaraa-zA-Z"/>
+                <arg0 key="formaNuevoRol.etiqueta.nombre"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>${alfabetico}</var-value>
+                </var>
+            </field>
+            <field property="descripcion"
+         	   depends="required,mask">
+                <msg name="mask" key="errors.mascaraa-zA-Z"/>
+                <arg0 key="formaNuevoRol.etiqueta.descripcion"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>${alfabetico}</var-value>
+                </var>
+            </field>
+        </form>
+        <form name="formaNuevoLogin">
+            <field property="nombrePrefijo" depends="required">
+                <arg0 key="formaNuevoLogin.etiqueta.nombrePrefijo"/>
+            </field>
+            <field property="claveAcceso" depends="required">
+                <arg0 key="formaNuevoLogin.etiqueta.claveAcceso"/>
+            </field>
+        </form>
+        <form name="formaNuevoGente">
+            <field property="nombres" depends="required">
+                <arg0 key="formaNuevoGente.etiqueta.nombres"/>
+            </field>
+            <field property="apellidos" depends="required">
+                <arg0 key="formaNuevoGente.etiqueta.apellidos"/>
+            </field>
+            <field property="direccion" depends="required">
+                <arg0 key="formaNuevoGente.etiqueta.direccion"/>
+            </field>
+            <field property="telefono" depends="required">
+                <arg0 key="formaNuevoGente.etiqueta.telefono"/>
+            </field>
+            <field property="idCiudad" depends="required">
+                <arg0 key="formaNuevoGente.etiqueta.ciudad"/>
+            </field>
+        </form>
+        <form name="formaNuevaPersona">
+            <field property="nombre"
+         	   depends="required,mask">
+                <msg name="mask" key="errors.mascaraa-zA-Z"/>
+                <arg0 key="formaNuevaPersona.etiqueta.nombre"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>${alfabetico}</var-value>
+                </var>
+            </field>
+
+            <field property="apellidoPaterno"
+         	   depends="mask">
+                <msg name="mask" key="errors.mascaraa-zA-Z"/>
+                <arg0 key="formaNuevaPersona.etiqueta.apellidoPaterno"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>${alfabetico}</var-value>
+                </var>
+            </field>
+
+            <field property="apellidoMaterno"
+         	   depends="mask,validwhen">
+                <msg name="mask" key="errors.mascaraa-zA-Z"/>
+                <msg name="validwhen" key="errors.alMenosUnCampo"/>
+                <arg0 key="formaNuevaPersona.etiqueta.apellidoMaterno"/>
+                <arg1 key="formaNuevaPersona.etiqueta.apellidoPaterno"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>${alfabetico}</var-value>
+                </var>
+                <var>
+                    <var-name>test</var-name>
+                    <var-value>((apellidoPaterno != null) or (*this* != null))</var-value>
+                </var>
+            </field>
+
+            <field property="nombreUsuario"
+         	   depends="required,minlength,maxlength">
+                <arg0 key="formaNuevaPersona.etiqueta.nombreUsuario"/>
+                <arg1 name="minlength"
+                      key="${var:minlength}" 
+                      resource="false"/>
+                <arg1 name="maxlength"
+                      key="${var:maxlength}" 
+                      resource="false"/>
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>6</var-value>
+                </var>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>12</var-value>
+                </var>
+
+            </field>
+
+            <field property="claveAcceso"
+         	   depends="required,minlength,maxlength">
+                <arg0 key="formaNuevaPersona.etiqueta.claveAcceso"/>
+                <arg1 name="minlength"
+                      key="${var:minlength}" 
+                      resource="false"/>
+                <arg1 name="maxlength"
+                      key="${var:maxlength}" 
+                      resource="false"/>
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>6</var-value>
+                </var>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>12</var-value>
+                </var>
+            </field>
+
+            <field property="claveAccesoConfirmacion"
+         	   depends="validwhen">
+                <msg name="validwhen" key="errors.camposIguales" />
+                <arg0 key="formaNuevaPersona.etiqueta.claveAcceso"/>
+                <arg1 key="formaNuevaPersona.etiqueta.claveAccesoConfirmacion"/>
+                <var>
+                    <var-name>test</var-name>
+                    <var-value>(claveAcceso == *this*)</var-value>
+                </var>
+            </field>
+        </form>
+   </formset>
+
+</form-validation>

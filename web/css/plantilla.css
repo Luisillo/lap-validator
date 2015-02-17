@@ -1,0 +1,234 @@
+
+
+body {
+	margin:0 0 0 0;
+	font-family: Arial;
+}
+table.marco {
+	border-collapse:collapse;
+	background-color: #FFFFFF;
+	width:100%;
+}
+table.barraBanner {
+	border-collapse:collapse;
+	background-color:#000;
+	height:45px;
+	width:100%;								
+}
+table.barraMenu {
+	background-color:#B4CED4;
+	border-bottom:1px solid red;
+	border-top:1px solid red;
+	font-family:Verdana, Arial;
+	font-size:11px;
+	width:100%;				
+}
+table.barraHerramienta {
+	border-bottom:1px solid;
+	width:100%;				
+}
+td.barraIzquierda {
+	background-color:#87B1BA;
+	border-right:1px solid red;
+	height:480px;
+	vertical-align:top;
+}
+td.barraDerecha {
+	width:5px;
+	vertical-align:top;
+	visibility:visible;
+}
+table.barraIzquierdaX {
+	border-style:solid;
+	border:0px;
+	width:100%;				
+}
+table.barraDerecha {
+	background-color:#66FFCC;
+	border-style:solid;
+	border:0px;
+	width:100%;				
+}
+table.barraPie {
+	background-color:#FFFFFF;
+	border-top:1px solid red;
+	font-family:Verdana, Arial;
+        font-size:11px;
+	height:25px;
+	width:100%;				
+}
+table.barraDerechos {
+	background-color:#FFFFFF;
+	font-family:Verdana, Arial;
+        font-size:9px;
+	width:100%;				
+}
+
+/* Aqui empueza */
+body {
+	background: #f1f1f1;
+}
+.barraBanner2 {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+	text-align: center;
+	margin-top: 40px;
+	
+}
+.barraBanner2 span {
+	padding: 10px;
+	margin: 0 10px;
+	background: #B40404;
+	color: #000;
+	border-radius: 10px;
+
+}
+.barraBanner2 #big {
+	font-size: 70px;
+}
+.barraBanner2 #descripcion {
+	display: block;
+	background: none;
+	color: #000;
+	margin-top: 20px;
+	font-size: 16px;
+}
+.barramenu2 {
+	padding: 10px;
+	border: 1px solid #777;
+	background: #d1d1d1;
+	margin-top: 20px;
+}
+.barramenu2 span {
+	border-right: 1px solid #777;
+	padding: 0 10px;
+}
+.inicio {
+	padding: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+	background: #fff;
+	border: 2px solid #ddd;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 40px;
+	min-height: 300px;
+}
+.footer {
+	background: #052a54;
+	text-align: center;
+	color: #fff;
+}
+.copy {
+	padding: 40px 0;
+	text-align: center;
+	background: #fff;
+}
+.boton {
+	padding: 10px;
+	background: #ccc;
+	border-radius: 10px;
+}
+.buscar {
+	position: absolute;
+	background: #ccc;
+	width: 151px;
+	top: 24px;
+	left: 3px;
+	border: 1px solid #777;
+	display: none;
+	z-index: 99;
+}
+.buscar ul {
+	padding: 5px 0;
+	margin: 0;
+}
+.buscar li {
+	list-style-type: none;
+	font-size: 12px;
+	padding: 2px 10px;
+	cursor: pointer;
+}
+.buscar li:hover {
+	background: #bbb;
+}
+.enlaces .td b {
+	cursor: pointer;
+}
+.table{
+  display:table;         
+  width:auto;                 
+  border-spacing:5px;/*cellspacing:poor IE support for  this*/
+}
+.tr{
+  display:table-row;
+  width:auto;
+  clear:both;
+}
+.td{
+  float:left;/*fix for  buggy browsers*/
+  display:table-column;         
+  width:200px;         
+}
+.form-login input {
+	font-size: 16px;
+	
+	width: 400px;
+	padding: 3px 6px;
+	margin-bottom: 5px;
+	display: block;
+}
+@media screen and (max-width: 1000px){
+	.barraBanner2 {
+		width: 100%;
+	}
+	.inicio {
+		width: 80%;
+	}
+	.footer {
+		padding: 8px 20px;
+	}
+	.HipervinculoAdmon {
+		display: none;
+	}
+	.form-login input {
+		width: 100%;
+		font-size: 50px;
+		height: 80px;
+	}
+	.tr {
+		display: block;
+		border-bottom: 3px solid #ddd;
+	}
+	.td {
+		display: block;
+		float: none;
+		width: auto !important;
+	}
+}
+
+@media screen and (max-width: 600px){
+
+	.barraBanner2 span {
+		font-size: 12px;
+		margin: 0 2px;
+	}
+	.barraBanner2 #big {
+		font-size: 40px;
+	}
+	.inicio {
+		width: 60%;
+	}
+}
+@media screen and (max-width: 320px){
+
+	.barraBanner2 span {
+		font-size: 10px;
+	}
+	.barraBanner2 #big {
+		font-size: 27px;
+	}
+
+}
