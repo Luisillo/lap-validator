@@ -137,11 +137,11 @@ public class AutoDAO {
         }
     }
 
-    public boolean existeAuto(String nombreAuto)
+    public boolean existeAuto(String placasAuto)
             throws ExcepcionInfraestructura {
 
         if (log.isDebugEnabled()) {
-            log.debug(">existeAuto(nombreAuto)");
+            log.debug(">existeAuto(placasAuto)");
         }
 
         try {
@@ -153,16 +153,16 @@ public class AutoDAO {
  //           int resultado =
  //           ((Integer) HibernateUtil.getSession()
  //                          .find(consultaCuentaEstados, 
- //                                nombreAuto,
+ //                                placasAuto,
  //                                StringType.INSTANCE)
  //                          .iterator()
  //                          .next()).intValue();
 // de acuerdo al nuevo formato
  
-			String hql = "select nombre from Auto where nombre = :nombre";
+			String hql = "select placas from Auto where placas = :placas";
 			
 			 if (log.isDebugEnabled()) {
-           		 log.debug(hql + nombreAuto);
+           		 log.debug(hql + placasAuto);
         	}
 		
 			Query query = HibernateUtil.getSession()
@@ -171,7 +171,7 @@ public class AutoDAO {
            		 log.debug("<<<<<<<<< create query ok " );
         	}
 
-			query.setParameter("nombre", nombreAuto);
+			query.setParameter("placas", placasAuto);
 			if (log.isDebugEnabled()) {
            		 log.debug("<<<<<<<<< set Parameter ok antes del query list >>>>>");
         	}

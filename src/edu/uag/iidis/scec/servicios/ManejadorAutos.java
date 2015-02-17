@@ -72,7 +72,7 @@ public class ManejadorAutos {
         try {
             HibernateUtil.beginTransaction();           
             
-            if (dao.existeAuto(auto.getNombre())) {
+            if (dao.existeAuto(auto.getPlacas())) {
                resultado = 1; // Excepción. El nombre de rol ya existe
             } else {
 

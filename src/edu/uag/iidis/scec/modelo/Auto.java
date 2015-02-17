@@ -17,7 +17,10 @@ public class Auto extends ClaseBase
         implements Serializable {
 
     private Long id;
-    private String nombre;
+    private String marca;
+    private String color;
+	private String placas;
+	private String propietario;
     private List usuarios = new ArrayList();
 
     public Auto() {
@@ -27,8 +30,9 @@ public class Auto extends ClaseBase
         this.id = id;
     }
 
-    public Auto(String nombre){
-        this.nombre=nombre;
+    public Auto(String marca){
+        this.marca=marca;
+        
     }
 
     /**
@@ -49,21 +53,49 @@ public class Auto extends ClaseBase
 
 
     /**
-     * Regresa el nombre del rol.
+     * Regresa el marca del rol.
      * @return String
      */
-    public String getNombre() {
-        return this.nombre;
+    public String getMarca() {
+        return this.marca;
     }
 
     /**
-     * Establece el nombre del rol.
+     * Establece el marca del rol.
      * @return void
      */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
+	
+	public String getColor(){
+	
+		return color;
+	}
+	
+	public void setColor(String color){
+	
+		this.color = color;
+	}
 
-    
-    
+    public String getPlacas(){
+	
+		return placas;
+	}
+	
+	public void setPlacas(String placas){
+	
+		this.placas = placas;
+	}
+	
+	public String getPropietario(){
+	
+		return propietario;
+	}
+	
+	public void setPropietario(String propietario){
+	
+		this.propietario = propietario;
+	}
+  
 }

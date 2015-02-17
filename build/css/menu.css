@@ -1,0 +1,29 @@
+
+table#tblMenuBar td { 
+	font-size:60%; 
+	color:white; 
+	padding:0px 5px 0px 5px; 
+	cursor:default; 
+}
+table#tblMenuBar td.clsMenuBarItem { 
+	font-weight:bold; 
+	cursor:hand; 
+}
+div.clsMenu { 
+	font-size:90%; 
+	background-color:#6699CC; 
+	position:absolute; 
+	visibility:hidden; 
+	width:130px; 
+	padding:5px 5px 5px 8px; 
+	border-top:1px white solid; 
+}
+div.clsMenu a { 
+	text-decoration:none; 
+	color:white; 
+	font-weight:bold; 
+}
+div.clsMenu a:hover { 
+	color:red; 
+}
+	

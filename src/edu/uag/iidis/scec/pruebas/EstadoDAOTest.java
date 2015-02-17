@@ -38,7 +38,7 @@ public class EstadoDAOTest extends TestCase {
             HibernateUtil.commitTransaction();
 
             assertTrue(rol.getId() != null);
-            assertTrue(rol.getEstado().equals("rol1"));
+            assertTrue(rol.getNombre().equals("rol1"));
         } catch (Exception e) {
             HibernateUtil.rollbackTransaction();
             throw e;

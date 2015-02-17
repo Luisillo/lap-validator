@@ -124,7 +124,7 @@
     <property name="catalina.home"    value="C:\apache-tomcat-7.0.57"/>
     <property name="manager.url"      value="http://127.0.0.1:8080/manager/text"/>
     <property name="manager.username" value="tomcat"/>
-    <property name="manager.password" value="12345"/>
+    <property name="manager.password" value="123"/>
 
 
 
