@@ -30,8 +30,11 @@ public class Auto extends ClaseBase
         this.id = id;
     }
 
-    public Auto(String marca){
+    public Auto(String marca, String color, String placas, String propietario){
         this.marca=marca;
+		this.color=color;
+		this.placas=placas;
+		this.propietario=propietario;
         
     }
 

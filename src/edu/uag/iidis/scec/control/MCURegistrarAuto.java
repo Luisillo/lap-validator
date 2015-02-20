@@ -69,7 +69,7 @@ public final class MCURegistrarAuto
 						  forma.getPlacas(),
 						  forma.getPropietario());
 
-        ManejadorRoles mr = new ManejadorRoles();
+        ManejadorAutos mr = new ManejadorAutos();
         int resultado = mr.crearAuto(auto);
 
         ActionMessages errores = new ActionMessages();
@@ -79,8 +79,8 @@ public final class MCURegistrarAuto
 
             case 1:
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
-                            new ActionMessage("errors.nombreRolYaExiste",
-                                               forma.getNombre()));                
+                            new ActionMessage("errors.yaexisteseAuto",
+                                               forma.getPlacas()));                
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
 
