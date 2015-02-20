@@ -17,8 +17,8 @@ public class Estado extends ClaseBase
         implements Serializable {
 
     private Long id;
-    private String nombre;
-    private String descripcion;
+    private String estado;
+    private String pais;
     private List usuarios = new ArrayList();
 
     public Estado() {
@@ -28,9 +28,9 @@ public class Estado extends ClaseBase
         this.id = id;
     }
 
-    public Estado(String nombre, String descripcion){
-        this.nombre=nombre;
-        this.descripcion=descripcion;
+    public Estado(String estado, String pais){
+        this.estado=estado;
+        this.pais=pais;
     }
 
     /**
@@ -51,19 +51,19 @@ public class Estado extends ClaseBase
 
 
     /**
-     * Regresa el nombre del rol.
+     * Regresa el estado del rol.
      * @return String
      */
-    public String getNombre() {
-        return this.nombre;
+    public String getEstado() {
+        return this.estado;
     }
 
     /**
-     * Establece el nombre del rol.
+     * Establece el estado del rol.
      * @return void
      */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     
@@ -71,16 +71,16 @@ public class Estado extends ClaseBase
      * Regresa la descripción del rol.
      * @return String
      */
-    public String getDescripcion() {
-        return this.descripcion;
+    public String getPais() {
+        return this.pais;
     }
 
     /**
      * Establece la descripción del rol.
      * @return void
      */
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setPais(String pais) {
+        this.pais = pais;
     }
     /**
      * Regresa los usuarios del rol.
