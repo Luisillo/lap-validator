@@ -66,7 +66,7 @@ public class ManejadorAutos {
         int resultado;
 
         if (log.isDebugEnabled()) {
-            log.debug(">guardarEstado(auto)");
+            log.debug(">guardarAuto(auto)");
         }
 
         try {
