@@ -14,13 +14,13 @@
             </generator>
         </id>
 
-        <property name="estado"
+        <property name="nombre"
 			column="Estado"
             type="java.lang.String"
             not-null="true"
             unique="true" />
 
-        <property name="pais"
+        <property name="descripcion"
 			column="Pais"
             type="java.lang.String" 
 			not-null="true"

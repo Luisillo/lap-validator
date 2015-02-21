@@ -39,15 +39,15 @@
         </div>
         <c:forEach var="estado" items="${formaListadoEstados.estados}">
             <div class="tr">
-                <div class="td" align="left" style="width:20%"><c:out value="${estado.estado}"/></div>
-                <div class="td" align="left" style="width:58%"><c:out value="${estado.pais}"/></div>
+                <div class="td" align="left" style="width:20%"><c:out value="${estado.nombre}"/></div>
+                <div class="td" align="left" style="width:58%"><c:out value="${estado.descripcion}"/></div>
                 <div class="td" align="left" style="width:20%">
                     <a href='solicitarModificarEstado.do?id=<c:out value="${estado.id}"/>'
 					   class="HipervinculoAdmon">
                         <fmt:message key="formaListadoEstados.etiqueta.modificar" />
                     </a>
                     <a href='procesarEliminarEstado.do?id=<c:out value="${estado.id}"/>'
-					   onClick="javascript: return EliminarEstado('<c:out value="${estado.estado}"/>')"
+					   onClick="javascript: return EliminarEstado('<c:out value="${estado.nombre}"/>')"
 					   class="HipervinculoAdmon">
                         <fmt:message key="formaListadoEstados.etiqueta.eliminar" />
                     </a>

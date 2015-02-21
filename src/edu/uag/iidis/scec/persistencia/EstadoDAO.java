@@ -159,7 +159,7 @@ public class EstadoDAO {
  //                          .next()).intValue();
 // de acuerdo al nuevo formato
  
-			String hql = "select estado from Estados where estado = :estado";
+			String hql = "select nombre from Estado  where nombre = :nombre";
 			
 			 if (log.isDebugEnabled()) {
            		 log.debug(hql + nombreEstado);

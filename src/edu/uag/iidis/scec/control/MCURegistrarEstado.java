@@ -64,11 +64,11 @@ public final class MCURegistrarEstado
         // Se obtienen los datos para procesar el registro
         FormaNuevoEstado forma = (FormaNuevoEstado)form;
 
-        Estado rol = new Estado(forma.getNombre(),
+        Estado estado = new Estado(forma.getNombre(),
                           forma.getDescripcion());
 
         ManejadorEstados mr = new ManejadorEstados();
-        int resultado = mr.crearEstado(rol);
+        int resultado = mr.crearEstado(estado);
 
         ActionMessages errores = new ActionMessages();
         switch (resultado) {

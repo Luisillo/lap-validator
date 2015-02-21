@@ -72,7 +72,7 @@ public class ManejadorEstados {
         try {
             HibernateUtil.beginTransaction();           
             
-            if (dao.existeEstado(estado.getEstado())) {
+            if (dao.existeEstado(estado.getNombre())) {
                resultado = 1; // Excepción. El nombre de rol ya existe
             } else {
 

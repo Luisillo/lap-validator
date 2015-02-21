@@ -17,8 +17,8 @@ public class Estado extends ClaseBase
         implements Serializable {
 
     private Long id;
-    private String estado;
-    private String pais;
+    private String nombre;
+    private String descripcion;
     private List usuarios = new ArrayList();
 
     public Estado() {
@@ -28,9 +28,9 @@ public class Estado extends ClaseBase
         this.id = id;
     }
 
-    public Estado(String estado, String pais){
-        this.estado=estado;
-        this.pais=pais;
+    public Estado(String nombre, String descripcion){
+        this.nombre=nombre;
+        this.descripcion=descripcion;
     }
 
     /**
@@ -51,49 +51,48 @@ public class Estado extends ClaseBase
 
 
     /**
-     * Regresa el estado del rol.
+     * Regresa el nombre del rol.
      * @return String
      */
-    public String getEstado() {
-        return this.estado;
+    public String getNombre() {
+        return this.nombre;
     }
 
     /**
-     * Establece el estado del rol.
+     * Establece el nombre del rol.
      * @return void
      */
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     
     /**
-     * Regresa la descripción del rol.
+     * Regresa la descripcion del rol.
      * @return String
      */
-    public String getPais() {
-        return this.pais;
+    public String getDescripcion() {
+        return this.descripcion;
     }
 
     /**
-     * Establece la descripción del rol.
+     * Establece la descripcion del rol.
      * @return void
      */
-    public void setPais(String pais) {
-        this.pais = pais;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     /**
      * Regresa los usuarios del rol.
      * @return List
      */
+	
+	
     public List getUsuarios() {
         return this.usuarios;
     }
 
-    /**
-     * Establece los usuarios del rol.
-     * @return void
-     */
+    
     public void setUsuarios(List usuarios) {
         this.usuarios = usuarios;
     }
@@ -102,4 +101,5 @@ public class Estado extends ClaseBase
         usuarios.add(usuario);
         usuario.getEstados().add(this);
     }
+	
 }
